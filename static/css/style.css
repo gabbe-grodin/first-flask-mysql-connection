@@ -3,7 +3,7 @@
   padding: 0;
   /* list-style: none; */
   box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -12,4 +12,40 @@ body {
   color: rgb(47, 255, 85);
   background-color: black;
   line-height: 250%;
+}
+
+header {
+  /* display: flex; */
+}
+
+h1, h2, h3 {
+  font-weight: 100;
+}
+
+h1, h2 {
+  margin: 0 15px 15px 0;
+}
+
+ol, h3 {
+  margin: 30px 0 0 20px;
+}
+
+h3 {
+  color: #ffb0f6;
+}
+
+ol li {
+  border-bottom: 2px dashed rgb(47, 255, 85);
+  padding: 10px;
+}
+
+ol div {
+  display: flex;
+}
+
+ol div p {
+  color: #ffb0f6;
+  margin-left: 20px;
+  font-size: x-large;
+  font-style: oblique;
 }

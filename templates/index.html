@@ -7,11 +7,37 @@
   <title>First Flask</title>
 </head>
 <body>
-  <h1>First Flask</h1>
-  <h2>or: connecting backend and frontend with python.</h2>
-  <h3>These are my friends:</h3>
+  <header>
+    <h1>First Flask</h1>
+    <h2>connecting backend and frontend with python.</h2>
+  </header>
+    <h2>Add a Friend</h2>
+    <form action="/create_friend" method="POST">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname">
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname">
+        <label for="occ" >Occupation:</label>
+        <input type="text" name="occ">
+        <input type="submit" value="Add Friend">
+    </form> 
+
+  <h3>from SQL database of my friends:</h3>
   <ol>
-    <li>FULL NAME: {{ first_name }} {{ last_name }}</li>
+    {% for one_friend in all_friends %}
+    <li>
+      <div>
+        FULL NAME: 
+        <p>
+          {{ one_friend.first_name }} {{ one_friend.last_name }}
+        </p>
+      </div>
+      <div>
+        OCCUPATION: {{ one_friend.occupation }}
+      </div>
+      
+    </li>
+    {% endfor %}
   </ol>
 
 </body>
