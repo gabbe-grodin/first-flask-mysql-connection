@@ -1,0 +1,56 @@
+! MySQL Connection Errors
+
+? Learning Objectives:
+? Students will explain the functionality of the connection from Flask to MySQL.
+
+? Instructions:
+? This may seem like an odd assignment, but getting errors is one of the best ways to start uncovering how things work, and what different parts of our code do.
+
+? Using the project you made in the previous tab, go into the mysqlconnection.py file and produce as many PyMySQL errors as possible in twenty minutes. Try using mistyped strings, an incorrect username, remove values, etc.
+
+? Copy and paste those errors in a .txt file and explain how you got to that error.
+
+1.  CHANGED: line 7 - removed quotation marks from localhost
+    ERROR MESSAGE: NameError: name 'localhost' is not defined
+
+2.  CHANGED: removed one apostrophe from value of parameter
+    ERROR MESSAGE: SyntaxError: unterminated string literal (detected at line 8)
+    * server broke
+    
+3.  CHANGED: removed both apostrophes from value of same parameter
+    ERROR MESSAGE: NameError: name 'root' is not defined
+
+4.  CHANGED: changed username string
+    ERROR MESSAGE: RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+    * broke server
+
+5.  CHANGED: added extra apostrophe around password string
+    ERROR MESSAGE: SyntaxError: unterminated string literal (detected at line 9)
+    * broke server
+
+6.  CHANGED: changed password slightly
+    ERROR MESSAGE: pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+7.  CHANGED: commented out line: charset = 'utf8mb4'
+    ERROR MESSAGE: nothing happened and server still unbroken
+
+8.  CHANGED: commented out next line: cursorclass = pymysql.cursors.DictCursor
+    ERROR MESSAGE: TypeError: tuple indices must be integers or slices, not str
+
+9.  CHANGED: deleted next line: autocommit = False
+    ERROR MESSAGE: nothing happened
+
+10. CHANGED: Removed parameter from nested cursor method
+    ERROR MESSAGE: TypeError: 'bool' object is not iterable
+
+11. CHANGED: Commented out finally statement of conditional in query database method
+    ERROR MESSAGE: nothing happened, at least not for this query
+    
+12. CHANGED: Added my name as an argument in a fetchall method
+    ERROR MESSAGE: TypeError: 'bool' object is not iterable
+
+13. CHANGED: Replaced argument with my name in return method call
+    ERROR MESSAGE: NameError: name 'gabbe' is not defined
+
+14. CHANGED: Replaced both parameter and argument with my name in connectToMySQL function
+    ERROR MESSAGE: nothing immediately happened but i can guess that when i try to modify the 'db' it won't work.
